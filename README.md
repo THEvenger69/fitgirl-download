@@ -1,3 +1,4 @@
+<div style="align:center">
 # Fitgirl Download
 
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
@@ -5,6 +6,7 @@
 [![License](https://img.shields.io/badge/License-GPL%20v3-c0392b?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](./LICENSE)
 
 [requirements](#requirements-) - [Get started](#to-install-) - [use it](#to-use-)
+</div>
 
 *Fitgirl Download* is a tool based on the website "fitgirl-repacks.site" (which repacks some thousands of games), that download all the .rar files for you, instead of downloading them one by one !
 
