@@ -1,7 +1,18 @@
 # Fitgirl Download
+
+[![Node](https://nodejs.org/static/logos/jsIconGreen.svg)](nodejs.org)
+[![Linux](https://www.linux.org/images/logo.png)](www.linux.org)
+[![License](https://img.shields.io/badge/License-GPL%20v3-c0392b?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](./LICENSE)
+
+[requirements](#requirements-) - [Get started](#to-install-) - [use it](#to-use-)
+
 *Fitgirl Download* is a tool based on the website "fitgirl-repacks.site" (which repacks some thousands of games), that download all the .rar files for you, instead of downloading them one by one !
 
 > for educational purpose only ! This tool is provied tu study how easy tasks can be automated to make life esaier. Use at your own risk and in compliance with all applicable terms of service.
+
+
+## requirements :
+Node.js v25.4.0 or older, to install use the official node support : [Node.js](https://nodejs.org/en/download/)
 
 
 ## to install :
@@ -13,9 +24,9 @@ npm init
 npm install puppeteer prompt-sync
 ```
 
+
 ## to use :
 ```bash 
 node fitgirl-download.js
 ```
 then write the name of the game, and select between the different choices avaiable !
-
