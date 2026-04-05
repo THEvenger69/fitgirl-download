@@ -1,4 +1,4 @@
-<div style="align:center">
+<div align="center">
 # Fitgirl Download
 
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
