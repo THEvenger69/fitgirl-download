@@ -1,7 +1,7 @@
 # Fitgirl Download
 
-[![Node](https://nodejs.org/static/logos/jsIconGreen.svg)](nodejs.org)
-[![Linux](https://www.linux.org/images/logo.png)](www.linux.org)
+[![Node.js](https://nodejs.org/static/logos/jsIconGreen.svg)](nodejs.org)
+[![Linux](https://img.shields.io/badge/Linux-Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com)
 [![License](https://img.shields.io/badge/License-GPL%20v3-c0392b?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](./LICENSE)
 
 [requirements](#requirements-) - [Get started](#to-install-) - [use it](#to-use-)
