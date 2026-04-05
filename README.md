@@ -17,4 +17,5 @@ npm install puppeteer prompt-sync
 ```bash 
 node fitgirl-download.js
 ```
+then write the name of the game, and select between the different choices avaiable !
 
