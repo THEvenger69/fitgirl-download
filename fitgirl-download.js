@@ -1,9 +1,16 @@
 import puppeteer from "puppeteer";
 import promptSync from 'prompt-sync';
+import fs from 'fs';
+import path from 'path';
 
 
-async function downloads(link, browser, compteur, length) {
+async function downloads(link, browser, compteur, length, downloadPath) {
     const page = await browser.newPage();
+    const client = await page.target().createCDPSession();
+    await client.send('Page.setDownloadBehavior', {
+        behavior: 'allow',
+        downloadPath: downloadPath,
+    });
     await page.goto(link, { waitUntil: "domcontentloaded", timeout: 0 });
 
     try {
@@ -31,7 +38,7 @@ async function findLinks(page, url){
             console.log("el :" + el)
             const link = el.querySelector("a");
             try {
-                if (link.href.slice(-3) === "rar") {
+                if (link.href.slice(-3) === "bin" || link.href.slice(-3) === "rar") {
                     results.push(link.href);
                 }
             } catch {
@@ -143,9 +150,11 @@ async function main() {
         console.log("");
         let i = 1;
         let urls = []
+        let names = []
         for (const el of choices) {
             console.log(`${i}. ${el.name}`);
             urls.push(el.link);
+            names.push(el.name);
             i++;
         }
         console.log("");
@@ -153,13 +162,20 @@ async function main() {
         const downloadUrl = await gotoDownloadUrl(urls[gameFinal], page);   
         const liens = await findLinks(page, downloadUrl);
         console.clear();
-        console.log(`${green} Download started !!${reset}`)
+        const safeName = names[gameFinal].replace(/[<>:"/\\|?*]/g, "_");
+        console.log(safeName + "    " + names[gameFinal]);
+        const downloadPath = path.resolve(`./downloads/${safeName}`);
+        console.log(downloadPath);
+        if (!fs.existsSync(downloadPath)) {
+            fs.mkdirSync(downloadPath, { recursive: true });
+        };
+        console.log(`${green} Download started in ${downloadPath} !!${reset}`)
         let j = 1;
         let lenghtFiles = liens.length;
         console.log("");
-        console.log("")
+        console.log("");
         for (const link of liens) {
-            await downloads(link, browser, j, lenghtFiles);
+            await downloads(link, browser, j, lenghtFiles, downloadPath);
             j++;
         }
     }
